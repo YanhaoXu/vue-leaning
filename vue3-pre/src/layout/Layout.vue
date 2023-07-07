@@ -1,5 +1,5 @@
 <template>
-  <div>app</div>
+  <div>框架</div>
 </template>
 
 <script setup></script>
