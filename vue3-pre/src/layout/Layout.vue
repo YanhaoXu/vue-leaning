@@ -40,4 +40,7 @@ console.log("routes", routes);
 .router-link-active {
   background: firebrick !important;
 }
+.app-main {
+  overflow: scroll;
+}
 </style>

@@ -35,6 +35,18 @@ export const routes = [
     ],
   },
   {
+    path: "/on-bind", // 配置路由地址
+    component: Layout, //配置组件
+    children: [
+      // children里面渲染二级路由
+      {
+        path: "",
+        // 路由懒加载,输入路由地址才会加载
+        component: () => import("@/views/on-bind/index.vue"),
+      },
+    ],
+  },
+  {
     path: "/css-scope", // 配置路由地址
     component: Layout, //配置组件
     children: [
