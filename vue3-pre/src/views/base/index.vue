@@ -13,6 +13,8 @@
 </template>
 
 <script setup>
+// 定义在全局的数据和方法 自动被模板解包 可以直接使用
+
 // 胡须语法 {{表达式}}
 const num1 = 20;
 function getMsg() {

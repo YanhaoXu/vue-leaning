@@ -42,5 +42,8 @@ console.log("routes", routes);
 }
 .app-main {
   overflow: scroll;
+  .page-css {
+    color: salmon;
+  }
 }
 </style>
