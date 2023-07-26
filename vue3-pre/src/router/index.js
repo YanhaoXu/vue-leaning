@@ -94,6 +94,30 @@ export const routes = [
       },
     ],
   },
+  {
+    path: "/toRef-toRefs", // 配置路由地址
+    component: Layout, //配置组件
+    children: [
+      // children里面渲染二级路由
+      {
+        path: "",
+        // 路由懒加载,输入路由地址才会加载
+        component: () => import("@/views/toRef-toRefs/index.vue"),
+      },
+    ],
+  },
+  {
+    path: "/shallowRef", // 配置路由地址
+    component: Layout, //配置组件
+    children: [
+      // children里面渲染二级路由
+      {
+        path: "",
+        // 路由懒加载,输入路由地址才会加载
+        component: () => import("@/views/shallowRef/index.vue"),
+      },
+    ],
+  },
 ];
 
 // 创建路由实例 导入配置项和模式
