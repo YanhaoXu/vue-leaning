@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>watch 侦听器 & watchEffect 副作用侦听器</h1>
+    <h1>watch 侦听器</h1>
     <h3 ref="numRef">num: {{ num }}</h3>
     <button @click="($event) => num++">num++</button>
     <h3>person: {{ person }}</h3>
