@@ -27,9 +27,11 @@ console.log("routes", routes);
 .layout {
   height: 100%;
   .navs {
+    overflow-y: scroll;
     width: 140px;
     background: sandybrown;
     .link {
+      flex: none;
       height: 40px;
       background: darkcyan;
       color: white;
