@@ -35,6 +35,7 @@ const shopList = reactive([
   { name: "小裤子", price: 400, count: 4, isChecked: false },
   { name: "小帽子", price: 500, count: 5, isChecked: false },
   { name: "小裙子", price: 600, count: 6, isChecked: false },
+  { name: "小背心", price: 700, count: 7, isChecked: false },
 ]);
 
 // 删除
