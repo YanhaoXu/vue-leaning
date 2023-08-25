@@ -1,6 +1,8 @@
 <template>
   <div>
     <h1>购物车</h1>
+    <h3>总数量: {{ calcTotalCount }}</h3>
+    <h3>总价格: {{ calcTotalPrice }}</h3>
     <table>
       <thead>
         <tr>
@@ -39,7 +41,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { computed, reactive, ref } from "vue";
 
 // 购物车数据
 const shopList = reactive([
@@ -73,6 +75,21 @@ function handleCheck() {
   // 所有isChecked 为 true allChecked 才为 true
   allChecked.value = shopList.every((v) => v.isChecked);
 }
+
+// 计算总数量
+const calcTotalCount = computed(() => {
+  return shopList.reduce((total, cur) => {
+    // 当前 √ 才叠加 当前不打 √ 把当前数据移植到下一次中
+    return cur.isChecked ? total + cur.count : total;
+  }, 0);
+});
+
+// 计算总价格
+const calcTotalPrice = computed(() => {
+  return shopList.reduce((total, cur) => {
+    return cur.isChecked ? total + cur.count * cur.price : total;
+  }, 0);
+});
 </script>
 
 <style lang="scss" scoped></style>
