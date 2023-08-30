@@ -2,39 +2,30 @@
   <div>
     <h1>todoList</h1>
     <!-- 新增 -->
-    <div>
-      <input type="text" v-model="newTask" @keyup.enter="add" />
-      <button @click="add">新增</button>
-    </div>
-    <!-- 渲染列表 -->
-    <div v-for="(item, index) in filterList" :key="item.name">
-      {{ item.name }}
-      <button v-if="!item.done" @click="item.done = true">完成</button>
-    </div>
+    <AddTodo @add="addData" />
+    <!-- 渲染Item -->
+    <TodoItem
+      @change:done="taskList[$event].done = true"
+      :item="item"
+      :index="index"
+      v-for="(item, index) in filterList"
+      :key="item.name"
+    />
     <!-- 切换状态 -->
-    <div>
-      <button @click="status = 'all'">全部</button>
-      <button @click="status = 'undone'">未完成</button>
-      <button @click="status = 'done'">已完成</button>
-    </div>
+    <Tabs @change:status="status = $event" :statusMap="statusMap" />
   </div>
 </template>
 
 <script setup>
 import { computed, reactive, ref } from "vue";
+import AddTodo from "./AddTodo.vue";
+import Tabs from "./Tabs.vue";
+import TodoItem from "./TodoItem.vue";
 
-// 新增数据字符串
-const newTask = ref("");
-
-// 新增
-function add() {
-  // 把数据拼接在数组头部
-  taskList.unshift({
-    name: newTask.value,
-    done: false,
-  });
-  //清空输入框
-  newTask.value = "";
+// 处理函数 形参val 收到子组件传递的数据
+function addData(val) {
+  // 父组件添加数据
+  taskList.unshift(val);
 }
 
 // 全部 未完成 已完成
@@ -46,7 +37,12 @@ const taskList = reactive([
 
 // 显示状态 all/全部 done/已完成 undone/未完成
 const status = ref("all");
-
+// 底部状态
+const statusMap = {
+  all: "全部",
+  undone: "未完成",
+  done: "已完成",
+};
 // 筛选数据
 const filterList = computed(() => {
   switch (status.value) {
