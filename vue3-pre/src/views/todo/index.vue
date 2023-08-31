@@ -17,6 +17,10 @@
 </template>
 
 <script setup>
+// 父组件拥有数据的绝对处理权利
+
+// 如果需要修改数据 子组件必须通知父组件去修改 而不是子组件直接修改
+// 遵循单向数据流原则
 import { computed, reactive, ref } from "vue";
 import AddTodo from "./AddTodo.vue";
 import Tabs from "./Tabs.vue";
