@@ -16,5 +16,10 @@ import router from "./router";
 // 使用路由
 app.use(router);
 
+// 引入自定义指令自动注册函数
+import { useDirectives } from "./directives";
+// 执行函数传入app
+useDirectives(app);
+
 // 挂载app实例 在index.html的id为app的div内部
 app.mount("#app");
