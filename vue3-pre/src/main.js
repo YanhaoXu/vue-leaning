@@ -21,5 +21,10 @@ import { useDirectives } from "./directives";
 // 执行函数传入app
 useDirectives(app);
 
+// 引入自定义插件
+import myPlugin from "@/plugins/myPlugin";
+// 插件使用 app.use(插件, 配置项)
+app.use(myPlugin, { name: "小橘猫" });
+
 // 挂载app实例 在index.html的id为app的div内部
 app.mount("#app");
