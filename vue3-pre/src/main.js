@@ -26,5 +26,8 @@ import myPlugin from "@/plugins/myPlugin";
 // 插件使用 app.use(插件, 配置项)
 app.use(myPlugin, { name: "小橘猫" });
 
+// 引入动画
+import "animate.css";
+
 // 挂载app实例 在index.html的id为app的div内部
 app.mount("#app");

@@ -1,46 +1,45 @@
 // 重置样式
 
 html,
-body{
+body {
   height: 100%;
   padding: 0;
   margin: 0;
 }
 
-
-#app{
+#app {
   height: 100%;
 }
 
-.df{
+.df {
   display: flex;
 }
 
-.aic{
+.aic {
   align-items: center;
 }
 
-.jcc{
+.jcc {
   justify-content: center;
 }
 
-.jcsb{
+.jcsb {
   justify-content: space-between;
 }
 
-.fdc{
+.fdc {
   flex-direction: column;
 }
 
-.f1{
+.f1 {
   flex: 1;
 }
 
-.fn{
+.fn {
   flex: none;
 }
 
-.mt10{
+.mt10 {
   margin-top: 10px;
 }
 
@@ -48,11 +47,10 @@ body{
   margin-bottom: 10px;
 }
 
-.p15{
+.p15 {
   padding: 15px;
 }
 
-
-// .box{
-//   border: 10px solid #ddd;
-// }
+.box {
+  border: 10px solid #ddd;
+}
