@@ -15,7 +15,10 @@
         <Transition mode="out-in" :duration="200" enter-active-class="animate__animated animate__backInLeft"
           leave-active-class="animate__animated animate__backOutRight">
           <!-- 动态组件加载组件 -->
-          <component :is="Component" />
+          <!-- 页面组件加keep-alive -->
+          <keep-alive include="Keep">
+            <component :is="Component" />
+          </keep-alive>
         </Transition>
       </router-view>
     </div>
