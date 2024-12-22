@@ -26,6 +26,10 @@ import myPlugin from "@/plugins/myPlugin";
 // 插件使用 app.use(插件, 配置项)
 app.use(myPlugin, { name: "小橘猫" });
 
+// 引入pinia & 使用pinia插件
+import { createPinia } from "pinia";
+app.use(createPinia());
+
 // 引入动画
 import "animate.css";
 

@@ -382,6 +382,30 @@ export const routes = [
       },
     ],
   },
+  {
+    path: "/pinia-1", // 配置路由地址
+    component: Layout, //配置组件
+    children: [
+      // children里面渲染二级路由
+      {
+        path: "",
+        // 路由懒加载,输入路由地址才会加载
+        component: () => import("@/views/pinia-1/index.vue"),
+      },
+    ],
+  },
+  {
+    path: "/pinia-2", // 配置路由地址
+    component: Layout, //配置组件
+    children: [
+      // children里面渲染二级路由
+      {
+        path: "",
+        // 路由懒加载,输入路由地址才会加载
+        component: () => import("@/views/pinia-2/index.vue"),
+      },
+    ],
+  },
 ];
 
 // 创建路由实例 导入配置项和模式
