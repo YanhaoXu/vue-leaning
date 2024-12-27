@@ -1,17 +1,17 @@
-import { defaultDefines } from 'vite';
+import { defaultDefines } from "vite";
 
-import vue from '@vite/js/plugin-vue';
-
-import {resolve} from 'path';
+import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import { resolve } from "path";
 
 export default defineConfig({
-  Plugins: [vue()],
+  Plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
-      '@': resolve(__dirname,'src'),
+      "@": resolve(__dirname, "src"),
     },
   },
   server: {
-    port:3000
-  }
-})
+    port: 3000,
+  },
+});
